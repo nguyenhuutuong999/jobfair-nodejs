@@ -33,7 +33,7 @@ class PaymentController {
     var accessKey = "ArJY3B0zEJuJlaID";
     var serectkey = "kFiLbcvI4ihPZ4jrUseCqqa4yOJcyNiu";
     var orderInfo = "pay with MoMo";
-    var returnUrl = "http://localhost:3001/payment/result";
+    var returnUrl = "https://gateway-dtusmartparking.herokuapp.com/result";
     var notifyurl = "https://callback.url/notify";
     // var amount = (request.body.value).toString();
     var amount = (10000).toString();
@@ -130,7 +130,7 @@ class PaymentController {
 
     var dateFormat = require('dateformat');
     const config = require('./../../config/default.json');
-    
+
     var tmnCode = config.vnp_TmnCode;
     var secretKey = config.vnp_HashSecret;
     var vnpUrl = config.vnp_Url;
