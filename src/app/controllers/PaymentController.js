@@ -19,7 +19,9 @@ const sortObject = (o) => {
   return sorted;
 }
 class PaymentController {
-
+  test(req, res, next) {
+    res.send("Hello MoMo")
+  }
   momo(request, response, next) {
     //parameters send to MoMo get get payUrl
     var endpoint =
