@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 let port = process.env.PORT || 3000;
+const route = require("./routes");
+const cors = require('cors')
 
-app.get('/', (req, res) => {
-    res.send("Hello World")
-})
+app.use(cors());
+route(app);
 
 app.listen(port, () =>{
     console.log(`Example app is listening on port http://localhost:${port}`);
