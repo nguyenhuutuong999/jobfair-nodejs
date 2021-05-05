@@ -1,6 +1,6 @@
 const uuid = require("uuid");
 const https = require("https");
-
+const firebaseApp = require('./../../config/firebase')
 
 const sortObject = (o) => {
   var sorted = {},
@@ -33,7 +33,7 @@ class PaymentController {
     var accessKey = "ArJY3B0zEJuJlaID";
     var serectkey = "kFiLbcvI4ihPZ4jrUseCqqa4yOJcyNiu";
     var orderInfo = "pay with MoMo";
-    var returnUrl = "https://gateway-dtusmartparking.herokuapp.com/result";
+    var returnUrl = "https://gateway-dtusmartparking.herokuapp.com/payment/result";
     var notifyurl = "https://callback.url/notify";
     // var amount = (request.body.value).toString();
     var amount = (10000).toString();
@@ -220,6 +220,7 @@ class PaymentController {
     let method = req.query.errorCode?1:(req.query.vnp_ResponseCode?0:-1)
     let amount = req.query.amount?req.query.amount:(req.query.vnp_Amount?req.query.vnp_Amount/100:null)
     if (statusCode == '0' || statusCode == '00') {
+      console.log("da vào firebase")
     firebaseApp
       .ref("User/information/parkingMan/idrootsv1")
       .once("value", (snapshot) => {
