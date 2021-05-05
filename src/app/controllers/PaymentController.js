@@ -34,7 +34,8 @@ class PaymentController {
     var orderInfo = "pay with MoMo";
     var returnUrl = "http://localhost:3001/payment/result";
     var notifyurl = "https://callback.url/notify";
-    var amount = (request.body.value).toString();
+    // var amount = (request.body.value).toString();
+    var amount = (10000).toString();
     var orderId = uuidv1();
     var requestId = uuidv1();
     var requestType = "captureMoMoWallet";
@@ -137,7 +138,8 @@ class PaymentController {
 
     var createDate = dateFormat(date, 'yyyymmddHHmmss');
     var orderId = dateFormat(date, 'HHmmss');
-    var amount = (req.body.value);
+    // var amount = (req.body.value);
+    var amount = 10000;
     var bankCode = '';
 
     var orderInfo = 'Top Up';
@@ -236,7 +238,8 @@ class PaymentController {
       .child("idrootsv1")
       .push({
         idPay: Date.now().toString(36) + Math.random().toString(36).substr(2),
-        value: parseInt(amount).toString(),
+        // value: parseInt(amount).toString(),
+        value: 10000,
         createAt: new Date().toISOString(),
         method: method,
         isNoti: false,
