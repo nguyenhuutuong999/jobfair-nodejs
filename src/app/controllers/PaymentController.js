@@ -1,5 +1,6 @@
-const uuidv1 = require("uuid");
+const uuid = require("uuid");
 const https = require("https");
+
 
 const sortObject = (o) => {
   var sorted = {},
@@ -36,8 +37,8 @@ class PaymentController {
     var notifyurl = "https://callback.url/notify";
     // var amount = (request.body.value).toString();
     var amount = (10000).toString();
-    var orderId = uuidv1();
-    var requestId = uuidv1();
+    var orderId = uuid.v1();
+    var requestId = uuid.v1();
     var requestType = "captureMoMoWallet";
     var extraData = "merchantName=;merchantId="; //pass empty value if your merchant does not have stores else merchantName=[storeName]; merchantId=[storeId] to identify a transaction map with a physical store
 
@@ -128,7 +129,8 @@ class PaymentController {
 
 
     var dateFormat = require('dateformat');
-
+    const config = require('./../../config/default.json');
+    
     var tmnCode = config.vnp_TmnCode;
     var secretKey = config.vnp_HashSecret;
     var vnpUrl = config.vnp_Url;
