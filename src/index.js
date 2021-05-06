@@ -6,6 +6,10 @@ const cors = require('cors')
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 
+//connect mongo db
+const db = require('./config')
+db.connect()
+//redirect for other port
 app.use(cors());
 
 app.use(morgan('combined'))
