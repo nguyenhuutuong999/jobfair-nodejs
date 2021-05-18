@@ -1,6 +1,0 @@
-{
-    "vnp_TmnCode":"MJ7NTNRR",
-    "vnp_HashSecret":"IBZUMZR3PMWEANF3AFUU1CDL26WJ7TWM",
-    "vnp_Url":"http://sandbox.vnpayment.vn/paymentv2/vpcpay.html",
-    "vnp_ReturnUrl": "https://gateway-dtusmartparking.herokuapp.com/payment/result"
-}

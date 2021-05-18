@@ -1,8 +1,5 @@
-
-const siteRouter = require("./site");
+const contactRouter = require("./contact");
 function route(app) {
-  app.use('/', siteRouter);
-
-
+  app.use('/contact', contactRouter);
 }
 module.exports = route;
