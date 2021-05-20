@@ -18,9 +18,17 @@ class ContactController {
   ranking(req, res, next) {
     const query = Contact.find();
     query.sort({ total_correct_anwser: 'desc', submited_total_time: 1 })
-    .then((courses) =>{
-        res.json(courses)
-    })
+    .then(courses =>res.json(courses))
+    .catch(next);
+  }
+
+  result(req, res, next) {
+    console.log(req.params)
+    Contact.findById(req.params.id)
+    .then(contact => {
+      //console.log(contact)
+      res.json(contact)}
+    )
     .catch(next);
   }
   
